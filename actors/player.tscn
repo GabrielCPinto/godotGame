@@ -1,9 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfmpovcjnltmf"]
+[gd_scene load_steps=16 format=3 uid="uid://dfmpovcjnltmf"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_wgkmo"]
+[ext_resource type="Texture2D" uid="uid://xibopnrjhejs" path="res://assets/Sprite Pack 2/2 - Mr. Mochi/Hurt (32 x 32).png" id="2_1l21c"]
 [ext_resource type="Texture2D" uid="uid://dt1ps1ry07d4t" path="res://assets/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="2_gsalv"]
 [ext_resource type="Texture2D" uid="uid://dutqeom4obhuh" path="res://assets/Sprite Pack 2/2 - Mr. Mochi/Jumping (32 x 32).png" id="3_kx6fm"]
 [ext_resource type="Texture2D" uid="uid://d1clk0pgatd58" path="res://assets/Sprite Pack 2/2 - Mr. Mochi/Running (32 x 32).png" id="4_hgyd5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pidc4"]
+atlas = ExtResource("2_1l21c")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjls5"]
 atlas = ExtResource("2_gsalv")
@@ -33,6 +38,14 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pidc4")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bjls5")
 }, {
 "duration": 1.0,
@@ -40,7 +53,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -83,13 +96,15 @@ script = ExtResource("1_wgkmo")
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_8od2x")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
+frame_progress = 0.743304
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l061n")
 
 [node name="hurtbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 32
 collision_mask = 4
 
