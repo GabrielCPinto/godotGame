@@ -74,7 +74,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(16, 0)
-collision_mask = 2
+collision_mask = 14
 script = ExtResource("1_wgkmo")
 
 [node name="Collision" type="CollisionShape2D" parent="."]

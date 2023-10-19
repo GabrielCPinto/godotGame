@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7pjfgd2ypfpx"]
+[gd_scene load_steps=19 format=3 uid="uid://b7pjfgd2ypfpx"]
 
 [ext_resource type="Texture2D" uid="uid://d3866ofxp5r1" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_jxvpw"]
 [ext_resource type="Texture2D" uid="uid://8s4hfcqqu8vx" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_ivgig"]
+[ext_resource type="PackedScene" uid="uid://cmsmcqlpocm1t" path="res://prefabs/coin.tscn" id="3_4bhro"]
 [ext_resource type="PackedScene" uid="uid://dfmpovcjnltmf" path="res://actors/player.tscn" id="3_y3haj"]
 [ext_resource type="Texture2D" uid="uid://do2oam4xpngdu" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="4_g0a8f"]
 [ext_resource type="Texture2D" uid="uid://dcgvgbmgxxklp" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="5_qeg1c"]
@@ -266,6 +267,26 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-65536, 65538, 1, -327683, 327682, 1, 65531, 65538, 5, 65528, 65538, 5, 4, 196610, 5, 18, 917506, 5, 19, 1179650, 5, -65518, 917506, 4, -65517, 1179650, 4, 35, 983042, 2, 36, 1048578, 2, 37, 1048578, 2, 38, 1048578, 2, 39, 1048578, 2, 40, 1048578, 2, 41, 1048578, 2, 42, 1114114, 2)
+
+[node name="coins" type="Node2D" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource("3_4bhro")]
+position = Vector2(-87, -114)
+
+[node name="coin2" parent="coins" instance=ExtResource("3_4bhro")]
+position = Vector2(52, -99)
+
+[node name="coin3" parent="coins" instance=ExtResource("3_4bhro")]
+position = Vector2(150, -53)
+
+[node name="coin4" parent="coins" instance=ExtResource("3_4bhro")]
+position = Vector2(129, -150)
+
+[node name="coin5" parent="coins" instance=ExtResource("3_4bhro")]
+position = Vector2(-122, -56)
+
+[node name="coin6" parent="coins" instance=ExtResource("3_4bhro")]
+position = Vector2(265, -70)
 
 [node name="moving_platform" parent="." instance=ExtResource("10_dobjb")]
 position = Vector2(-2, -128)
