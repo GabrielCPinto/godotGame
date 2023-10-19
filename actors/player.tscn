@@ -72,24 +72,21 @@ animations = [{
 size = Vector2(13, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dliki"]
-size = Vector2(16, 13)
+size = Vector2(18, 13)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(16, 0)
 collision_mask = 22
 script = ExtResource("1_wgkmo")
 
 [node name="animator" type="AnimationPlayer" parent="."]
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(-18, -22)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_8od2x")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-17.5, -14.5)
 shape = SubResource("RectangleShape2D_l061n")
 
 [node name="hurtbox" type="Area2D" parent="."]
@@ -97,10 +94,18 @@ collision_layer = 32
 collision_mask = 4
 
 [node name="collision" type="CollisionShape2D" parent="hurtbox"]
-visible = false
-position = Vector2(-18, -15.5)
 shape = SubResource("RectangleShape2D_dliki")
 
 [node name="remote" type="RemoteTransform2D" parent="."]
+
+[node name="ray_right" type="RayCast2D" parent="."]
+position = Vector2(8, 0)
+target_position = Vector2(4, 0)
+collision_mask = 4
+
+[node name="ray_left" type="RayCast2D" parent="."]
+position = Vector2(-8, 0)
+target_position = Vector2(-4, 0)
+collision_mask = 4
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

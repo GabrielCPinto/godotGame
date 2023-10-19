@@ -300,7 +300,7 @@ distance = 64
 move_horizontal = false
 
 [node name="Player" parent="." instance=ExtResource("3_y3haj")]
-position = Vector2(-158, -17)
+position = Vector2(-158, -29)
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
