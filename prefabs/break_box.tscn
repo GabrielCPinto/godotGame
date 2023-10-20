@@ -74,6 +74,7 @@ script = ExtResource("1_8m6vh")
 pieces = PackedStringArray("res://assets/Seasonal Tilesets/5 - Misc. universal tiles/brick-piece-01.png", "res://assets/Seasonal Tilesets/5 - Misc. universal tiles/brick-piece-02.png", "res://assets/Seasonal Tilesets/5 - Misc. universal tiles/brick-piece-03.png", "res://assets/Seasonal Tilesets/5 - Misc. universal tiles/brick-piece-04.png")
 
 [node name="collision" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_s7g0n")
 
 [node name="texture" type="Sprite2D" parent="."]
@@ -85,3 +86,6 @@ region_rect = Rect2(16, 16, 16, 16)
 libraries = {
 "": SubResource("AnimationLibrary_a41oo")
 }
+
+[node name="spawn_coin" type="Marker2D" parent="."]
+position = Vector2(0, -9)

@@ -377,3 +377,9 @@ editor_draw_limits = true
 
 [node name="break_box" parent="." instance=ExtResource("14_njfv2")]
 position = Vector2(-162, -81)
+
+[node name="break_box2" parent="." instance=ExtResource("14_njfv2")]
+position = Vector2(-37, -85)
+
+[node name="break_box3" parent="." instance=ExtResource("14_njfv2")]
+position = Vector2(87, -107)
