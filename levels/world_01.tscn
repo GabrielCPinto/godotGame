@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b7pjfgd2ypfpx"]
+[gd_scene load_steps=23 format=3 uid="uid://b7pjfgd2ypfpx"]
 
 [ext_resource type="Script" path="res://scripts/world_01.gd" id="1_8vd3x"]
 [ext_resource type="Texture2D" uid="uid://d3866ofxp5r1" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_jxvpw"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b6pb08otd2ua6" path="res://prefabs/moving_platform.tscn" id="10_dobjb"]
 [ext_resource type="PackedScene" uid="uid://c0kje48d0qmoh" path="res://actors/enemy.tscn" id="12_fpta8"]
 [ext_resource type="PackedScene" uid="uid://4hulb1g6vuq8" path="res://prefabs/break_box.tscn" id="14_njfv2"]
+[ext_resource type="PackedScene" uid="uid://cx1krlo6xcfn4" path="res://prefabs/falling_platform.tscn" id="15_tej6t"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ie0vx"]
 tile_data = PackedInt32Array(0, 65538, 1)
@@ -383,3 +384,6 @@ position = Vector2(-37, -85)
 
 [node name="break_box3" parent="." instance=ExtResource("14_njfv2")]
 position = Vector2(87, -107)
+
+[node name="falling_platform" parent="break_box3" instance=ExtResource("15_tej6t")]
+position = Vector2(-129, -23)
