@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b7pjfgd2ypfpx"]
+[gd_scene load_steps=22 format=3 uid="uid://b7pjfgd2ypfpx"]
 
 [ext_resource type="Script" path="res://scripts/world_01.gd" id="1_8vd3x"]
 [ext_resource type="Texture2D" uid="uid://d3866ofxp5r1" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_jxvpw"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://jne6wqhohkv8" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="8_76hcj"]
 [ext_resource type="PackedScene" uid="uid://b6pb08otd2ua6" path="res://prefabs/moving_platform.tscn" id="10_dobjb"]
 [ext_resource type="PackedScene" uid="uid://c0kje48d0qmoh" path="res://actors/enemy.tscn" id="12_fpta8"]
+[ext_resource type="PackedScene" uid="uid://4hulb1g6vuq8" path="res://prefabs/break_box.tscn" id="14_njfv2"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ie0vx"]
 tile_data = PackedInt32Array(0, 65538, 1)
@@ -300,7 +301,7 @@ distance = 64
 move_horizontal = false
 
 [node name="Player" parent="." instance=ExtResource("3_y3haj")]
-position = Vector2(-158, -29)
+position = Vector2(-158, -34)
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
@@ -373,3 +374,6 @@ position = Vector2(318, -28)
 zoom = Vector2(2, 2)
 limit_left = 0
 editor_draw_limits = true
+
+[node name="break_box" parent="." instance=ExtResource("14_njfv2")]
+position = Vector2(-162, -81)
