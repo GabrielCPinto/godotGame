@@ -18,5 +18,6 @@ region_enabled = true
 region_rect = Rect2(96, 64, 32, 16)
 
 [node name="collision" type="CollisionShape2D" parent="plataform"]
+visible = false
 shape = SubResource("RectangleShape2D_egvle")
 one_way_collision = true
