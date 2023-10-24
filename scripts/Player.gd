@@ -55,7 +55,7 @@ func _on_hurtbox_body_entered(body):
 		take_damage(Vector2(200,-200))
 
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
-	if player_life > 1:
+	if player_life > 0:
 		player_life -= 1
 	else:
 		queue_free()
