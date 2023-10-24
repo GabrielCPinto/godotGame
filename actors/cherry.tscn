@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnp6iq3u2hgob"]
+
+[ext_resource type="Texture2D" uid="uid://kynk4vxyxapy" path="res://assets/Sprite Pack 2/7 - Rocket Cherry/Hopping (16 x 32).png" id="1_5wv8q"]
+[ext_resource type="Script" path="res://scripts/cherry.gd" id="1_i7yxk"]
+[ext_resource type="Texture2D" uid="uid://cq7ei1wj8upbd" path="res://assets/Sprite Pack 2/7 - Rocket Cherry/Hurt (16 x 32).png" id="2_aw67f"]
+[ext_resource type="PackedScene" uid="uid://dbjedcag4ngfj" path="res://prefabs/hitbox.tscn" id="3_o8yv1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rmi0"]
+size = Vector2(12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no5pw"]
+atlas = ExtResource("1_5wv8q")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn3tp"]
+atlas = ExtResource("1_5wv8q")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4d70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no5pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn3tp")
+}],
+"loop": true,
+"name": &"hopping",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aw67f")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cux4"]
+size = Vector2(12, 5)
+
+[node name="cherry" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_i7yxk")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_7rmi0")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p4d70")
+animation = &"hurt"
+autoplay = "hopping"
+frame_progress = 1.0
+
+[node name="hitbox" parent="." instance=ExtResource("3_o8yv1")]
+
+[node name="collision" type="CollisionShape2D" parent="hitbox"]
+visible = false
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_8cux4")

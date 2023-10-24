@@ -113,6 +113,7 @@ _data = {
 [node name="rocket_cherry" type="CharacterBody2D" parent="."]
 position = Vector2(-1, 0)
 collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_vhgfk")
 
 [node name="collision" type="CollisionShape2D" parent="rocket_cherry"]
@@ -151,5 +152,4 @@ libraries = {
 "": SubResource("AnimationLibrary_wnqvw")
 }
 
-[connection signal="animation_finished" from="rocket_cherry/anim" to="rocket_cherry" method="_on_anim_animation_finished"]
 [connection signal="body_entered" from="rocket_cherry/hitbox" to="rocket_cherry" method="_on_hitbox_body_entered"]
