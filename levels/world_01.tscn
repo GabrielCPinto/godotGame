@@ -460,6 +460,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("20_andml")
+default_minutes = 2
+default_seconds = 5
+
+[node name="clock_timer" type="Timer" parent="HUD/control"]
+autostart = true
 
 [node name="container" type="MarginContainer" parent="HUD/control"]
 layout_mode = 1
@@ -572,3 +577,4 @@ text = "03
 vertical_alignment = 1
 
 [connection signal="body_entered" from="spike_area" to="spike_area" method="_on_body_entered"]
+[connection signal="timeout" from="HUD/control/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]

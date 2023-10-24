@@ -10,10 +10,10 @@ var knockback_vector := Vector2.ZERO
 var direction
 var is_hurt := false
 
-@export var player_life := 3
-
 @onready var animation := $anim as AnimatedSprite2D
 @onready var remote_transform := $remote as RemoteTransform2D
+
+signal player_has_died()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -55,10 +55,11 @@ func _on_hurtbox_body_entered(body):
 		take_damage(Vector2(200,-200))
 
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
-	if player_life > 0:
-		player_life -= 1
+	if Globals.player_life > 0:
+		Globals.player_life -= 1
 	else:
 		queue_free()
+		emit_signal("player_has_died")
 	
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force
