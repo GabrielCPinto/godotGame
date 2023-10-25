@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b7pjfgd2ypfpx"]
+[gd_scene load_steps=43 format=3 uid="uid://b7pjfgd2ypfpx"]
 
 [ext_resource type="Script" path="res://scripts/world_01.gd" id="1_8vd3x"]
 [ext_resource type="Texture2D" uid="uid://d3866ofxp5r1" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_jxvpw"]
@@ -29,6 +29,7 @@
 [ext_resource type="FontFile" uid="uid://b03gbk403i6j3" path="res://assets/Mini FX, Items & UI/Fonts/RevMiniPixel.ttf" id="24_dj4i4"]
 [ext_resource type="Texture2D" uid="uid://bpnyrg4dgfau" path="res://assets/Mini FX, Items & UI/Mini UI/Life-Counter-Icon.png" id="25_gudql"]
 [ext_resource type="PackedScene" uid="uid://df2mjgereuhmw" path="res://actors/base_patrol.tscn" id="29_1xmwl"]
+[ext_resource type="PackedScene" uid="uid://bru3u7cchpyu1" path="res://prefabs/menu.tscn" id="30_scnyh"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ie0vx"]
 tile_data = PackedInt32Array(0, 65538, 1)
@@ -623,6 +624,8 @@ vertical_alignment = 1
 
 [node name="base_patrol" parent="." instance=ExtResource("29_1xmwl")]
 position = Vector2(466, -44)
+
+[node name="menu" parent="." instance=ExtResource("30_scnyh")]
 
 [connection signal="body_entered" from="spike_area" to="spike_area" method="_on_body_entered"]
 [connection signal="timeout" from="HUD/control/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]
