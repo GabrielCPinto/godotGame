@@ -3,7 +3,7 @@ extends Node2D
 @onready var texture = $texture
 @onready var area_sign = $area_sign
 
-const lines : Array[String] = [
+@export var lines : Array[String] = [
 	"teste",
 	"teste2",
 	'tesste'
