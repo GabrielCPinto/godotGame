@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://4hulb1g6vuq8"]
+[gd_scene load_steps=8 format=3 uid="uid://4hulb1g6vuq8"]
 
 [ext_resource type="Script" path="res://scripts/break_box.gd" id="1_8m6vh"]
 [ext_resource type="Texture2D" uid="uid://bvia3l24iie7g" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="1_fqvap"]
+[ext_resource type="AudioStream" uid="uid://dxpbwse28i4jb" path="res://sounds/hit_block_sfx.wav" id="3_dj7u5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7g0n"]
 size = Vector2(16, 16)
@@ -90,3 +91,7 @@ libraries = {
 [node name="spawn_coin" type="Marker2D" parent="."]
 visible = false
 position = Vector2(0, -9)
+
+[node name="hit_block" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dj7u5")
+volume_db = 10.0

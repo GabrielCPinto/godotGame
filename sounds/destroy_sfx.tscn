@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://djj6gxg5i1bdc"]
+
+[ext_resource type="AudioStream" uid="uid://dnhoage8rnfqe" path="res://sounds/break_sfx.wav" id="1_sk8d2"]
+
+[node name="destroy_sfx" type="AudioStreamPlayer"]
+stream = ExtResource("1_sk8d2")
+volume_db = -7.0

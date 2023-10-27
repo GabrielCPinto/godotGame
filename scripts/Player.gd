@@ -12,6 +12,8 @@ var is_hurt := false
 
 @onready var animation := $anim as AnimatedSprite2D
 @onready var remote_transform := $remote as RemoteTransform2D
+@onready var jump_sfx = $jump_sfx as AudioStreamPlayer
+@onready var destroy_sfx = preload("res://sounds/destroy_sfx.tscn")
 
 signal player_has_died()
 
@@ -23,6 +25,7 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sfx.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -97,5 +100,14 @@ func _on_head_collider_body_entered(body):
 		body.create_coin()
 		if body.hitpoints <= 0:
 			body.break_sprite()
+			play_destroy_sfx()
 		else:
 			body.animation_player.play("hit")
+			body.hit_block.play()
+
+func play_destroy_sfx():
+	var sound_sfx = destroy_sfx.instantiate()
+	get_parent().add_child(sound_sfx)
+	sound_sfx.play()
+	await sound_sfx.finished
+	sound_sfx.queue_free()
