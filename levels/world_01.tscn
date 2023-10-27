@@ -666,5 +666,8 @@ stream = ExtResource("36_t3flc")
 volume_db = -10.0
 autoplay = true
 
+[node name="player_start_position" type="Marker2D" parent="."]
+position = Vector2(-173, -40)
+
 [connection signal="body_entered" from="spike_area" to="spike_area" method="_on_body_entered"]
 [connection signal="timeout" from="HUD/control/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]
