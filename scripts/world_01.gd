@@ -6,6 +6,7 @@ extends Node2D
 @onready var camera := $Camera as Camera2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Globals.player_start_position = $player_start_position
 	Globals.player = player
 	Globals.player.follow_camera(camera)
 	Globals.player.player_has_died.connect(reload_game)
