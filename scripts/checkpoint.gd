@@ -5,7 +5,7 @@ extends Area2D
 var is_active = false
 
 func _on_body_entered(body):
-	if body.name != "player" or is_active:
+	if body.name == "Player" and !is_active:
 		activate_checkpoint()
 
 func activate_checkpoint():
