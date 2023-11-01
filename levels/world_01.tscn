@@ -495,7 +495,7 @@ position = Vector2(626, -55)
 [node name="warning_sign" type="Node2D" parent="."]
 position = Vector2(34, -32)
 script = ExtResource("16_3lenl")
-lines = Array[String](["Olá, meu amor! O para continuar", "Espero que se divirta", "Te amo", "Boa sorte"])
+lines = Array[String](["Olá, meu amor! F para continuar", "Espero que se divirta", "Te amo", "Boa sorte"])
 
 [node name="texture" type="Sprite2D" parent="warning_sign"]
 visible = false
