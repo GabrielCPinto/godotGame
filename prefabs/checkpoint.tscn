@@ -88,16 +88,14 @@ animations = [{
 }]
 
 [node name="checkpoint" type="Area2D"]
+position = Vector2(0, -13)
 collision_layer = 2
 script = ExtResource("1_nh4fl")
 
 [node name="collision" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -15.5)
 shape = SubResource("RectangleShape2D_avp1u")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_s46qv")
 animation = &"checked"
 autoplay = "unchecked"

@@ -562,15 +562,15 @@ size_flags_vertical = 0
 [node name="coins_icon" type="TextureRect" parent="HUD/control/container/coins_container"]
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
 texture = SubResource("AnimatedTexture_a8n58")
+expand_mode = 2
 
 [node name="coins_counter" type="Label" parent="HUD/control/container/coins_container"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("24_dj4i4")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "0000"
 vertical_alignment = 1
 
@@ -582,9 +582,9 @@ size_flags_vertical = 0
 [node name="timer_label" type="Label" parent="HUD/control/container/timer_container"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("24_dj4i4")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "TIMER:"
 vertical_alignment = 1
 
@@ -592,9 +592,9 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("24_dj4i4")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "00"
 vertical_alignment = 1
 
@@ -607,9 +607,9 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_colors/font_color = Color(0.835294, 0.815686, 0.0392157, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("24_dj4i4")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "SCORE:"
 vertical_alignment = 1
 
@@ -617,9 +617,9 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("24_dj4i4")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "000000"
 vertical_alignment = 1
 
@@ -631,24 +631,24 @@ size_flags_vertical = 8
 [node name="life_icon" type="TextureRect" parent="HUD/control/container/life_container"]
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
 texture = ExtResource("25_gudql")
+expand_mode = 2
 
 [node name="life_separator" type="Label" parent="HUD/control/container/life_container"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("24_dj4i4")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "X"
 vertical_alignment = 1
 
 [node name="life_counter" type="Label" parent="HUD/control/container/life_container"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("24_dj4i4")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "03
 "
 vertical_alignment = 1
@@ -656,7 +656,7 @@ vertical_alignment = 1
 [node name="menu" parent="." instance=ExtResource("30_scnyh")]
 
 [node name="checkpoint" parent="." instance=ExtResource("31_pnsda")]
-position = Vector2(383, -24)
+position = Vector2(383, -37)
 
 [node name="transition" type="CanvasLayer" parent="."]
 script = ExtResource("32_wfxwy")

@@ -9,7 +9,7 @@ func _on_body_entered(body):
 		activate_checkpoint()
 
 func activate_checkpoint():
-	Globals. current_checkpoint = self
+	Globals.current_checkpoint = self
 	anim.play("raising")
 	is_active = true
 
