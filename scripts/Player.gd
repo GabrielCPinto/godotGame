@@ -19,6 +19,7 @@ var can_jump := true
 
 signal player_has_died()
 
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

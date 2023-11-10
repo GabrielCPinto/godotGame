@@ -9,6 +9,6 @@ var player_start_position = null
 
 func respawn_player():
 	if current_checkpoint:
-		player.position = current_checkpoint.global_position
+		player.global_position = current_checkpoint.global_position
 	else:
 		player.global_position = player_start_position.global_position
