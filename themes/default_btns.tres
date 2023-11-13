@@ -9,6 +9,10 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.988235, 0.717647, 0.752941, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xq0n"]
 bg_color = Color(0.890196, 0.439216, 0.498039, 1)
@@ -17,7 +21,9 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.988235, 0.721569, 0.713726, 1)
+expand_margin_left = 5.0
 expand_margin_top = 5.0
+expand_margin_right = 5.0
 expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eeh6t"]

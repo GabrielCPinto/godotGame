@@ -26,4 +26,4 @@ func reload_game():
 	Globals.respawn_player()
 
 func game_over():
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://prefabs/game_over.tscn")
