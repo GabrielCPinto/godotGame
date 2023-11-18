@@ -25,6 +25,6 @@ func create_coin():
 	get_parent().add_child(coin)
 	#call_deferred("add_child",coin)#
 	coin.global_position = spawn_coin.global_position
-	print(spawn_coin.global_position)
-	print(coin.global_position)
+#	print(spawn_coin.global_position)
+#	print(coin.global_position)
 	coin.apply_impulse(Vector2(randi_range(-50, 50), -150))
