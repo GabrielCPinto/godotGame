@@ -74,14 +74,14 @@ collision_mask = 0
 script = ExtResource("1_8m6vh")
 pieces = PackedStringArray("res://assets/Seasonal Tilesets/5 - Misc. universal tiles/brick-piece-01.png", "res://assets/Seasonal Tilesets/5 - Misc. universal tiles/brick-piece-02.png", "res://assets/Seasonal Tilesets/5 - Misc. universal tiles/brick-piece-03.png", "res://assets/Seasonal Tilesets/5 - Misc. universal tiles/brick-piece-04.png")
 
-[node name="collision" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("RectangleShape2D_s7g0n")
-
 [node name="texture" type="Sprite2D" parent="."]
 texture = ExtResource("1_fqvap")
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
+
+[node name="collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_s7g0n")
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {

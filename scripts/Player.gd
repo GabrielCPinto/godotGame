@@ -10,6 +10,7 @@ var knockback_vector := Vector2.ZERO
 var direction
 var is_hurt := false
 var can_jump := true
+var knockback_power := 20
 
 @onready var animation := $anim as AnimatedSprite2D
 @onready var remote_transform := $remote as RemoteTransform2D
@@ -60,11 +61,8 @@ func _physics_process(delta):
 
 
 func _on_hurtbox_body_entered(body):	
-	if $ray_right.is_colliding():
-		take_damage(Vector2(-200,-200))
-	elif $ray_left.is_colliding():
-		take_damage(Vector2(200,-200))
-	
+	var knockback = Vector2((global_position.x - body.global_position.x) * knockback_power, -200)
+	take_damage(knockback)
 	if body.is_in_group("fireball"):
 		body.queue_free()
 

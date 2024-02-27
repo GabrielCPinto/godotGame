@@ -14,7 +14,7 @@ var impulse := 200
 func break_sprite():
 	for piece in pieces:
 		var piece_instance = box_pieces.instantiate()
-		get_parent().add_child(piece_instance)
+		add_sibling(piece_instance)
 		piece_instance.get_node("texture").texture = load(piece)
 		piece_instance.global_position = global_position
 		piece_instance.apply_impulse(Vector2(randi_range(-impulse, impulse),randi_range(-impulse, -impulse * 2)))
@@ -22,9 +22,7 @@ func break_sprite():
 
 func create_coin():
 	var coin = coin_instance.instantiate()
-	get_parent().add_child(coin)
-	#call_deferred("add_child",coin)#
+	call_deferred("add_sibling",coin)#
 	coin.global_position = spawn_coin.global_position
-#	print(spawn_coin.global_position)
-#	print(coin.global_position)
+	coin.global_position -= get_parent().global_position
 	coin.apply_impulse(Vector2(randi_range(-50, 50), -150))
