@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://ds206e2ckifuk"]
+[gd_scene load_steps=50 format=3 uid="uid://ds206e2ckifuk"]
 
 [ext_resource type="Script" path="res://scripts/world_01.gd" id="1_457og"]
 [ext_resource type="Texture2D" uid="uid://dc3dk1wqfdhor" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="2_rjrol"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://jne6wqhohkv8" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="16_l8do0"]
 [ext_resource type="PackedScene" uid="uid://c0kje48d0qmoh" path="res://actors/enemy.tscn" id="17_46rjq"]
 [ext_resource type="PackedScene" uid="uid://df2mjgereuhmw" path="res://actors/base_patrol.tscn" id="18_4tvy3"]
+[ext_resource type="PackedScene" uid="uid://bgr8srslqxxam" path="res://actors/trex.tscn" id="19_b6rpg"]
 [ext_resource type="PackedScene" uid="uid://4hulb1g6vuq8" path="res://prefabs/break_box.tscn" id="19_doufy"]
 [ext_resource type="Script" path="res://scripts/warning_sign.gd" id="20_eto3b"]
 [ext_resource type="Texture2D" uid="uid://yov54l4l3xt4" path="res://assets/Mini FX, Items & UI/Mini UI/Speech_Emotes (16 x 16).png" id="21_o8ft0"]
@@ -450,12 +451,6 @@ centered = false
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="enemy" parent="enemies" instance=ExtResource("17_46rjq")]
-position = Vector2(1, -25)
-
-[node name="enemy2" parent="enemies" instance=ExtResource("17_46rjq")]
-position = Vector2(-32, -26)
-
 [node name="enemy3" parent="enemies" instance=ExtResource("17_46rjq")]
 position = Vector2(113, -28)
 
@@ -464,6 +459,13 @@ position = Vector2(318, -28)
 
 [node name="base_patrol" parent="enemies" instance=ExtResource("18_4tvy3")]
 position = Vector2(466, -44)
+
+[node name="trex" parent="enemies" node_paths=PackedStringArray("target") instance=ExtResource("19_b6rpg")]
+position = Vector2(-7, -25)
+target = NodePath("../../Player")
+
+[node name="trex2" parent="enemies" instance=ExtResource("19_b6rpg")]
+position = Vector2(-85, -104)
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -655,6 +657,10 @@ material = SubResource("ShaderMaterial_gumn5")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
